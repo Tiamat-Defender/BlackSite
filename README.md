@@ -20,7 +20,7 @@
     + [Final result](#final-result)
 
 # Usage
-![imgbefore](gui.PNG)
+![imgbefore](image/gui.png)
 
 1.) Load a binary by clicking `file` in the top left corner.  
 2.) Add functions by expanding the `Functions` tree. (You can search by putting in the name in the search bar at the top)  
@@ -31,13 +31,13 @@
 ### Obfuscation of immediate moves
 If an immediate value is moved into a register, we obfuscate it by applying multiple bitwise operations.  
 Before:
-![imgbefore](const_before.PNG)  
+![imgbefore](image/const_before.PNG)  
 After:
-![imgafter](const_after.PNG)
+![imgafter](image/const_after.PNG)
 
 ### Control flow flattening
 This increases the complexity of the program by removing the tidy program structure the compiler generated and placing the code in new, generated blocks.  
-![imgmain](flatten_function.PNG)  
+![imgmain](image/flatten_function.PNG)  
 
 ### ADD mutation
 Mutates the `ADD` instruction syntax without changing the semantic meaning, making reverse engineering more difficult.  
@@ -52,7 +52,7 @@ sub rcx, 1
 
 ### Entry point obfuscation
 For `.exe` files, a custom entry point is created to decrypt the real entry point on startup. (Note: doesn't work when being manually mapped).  
-![imgmaincfg](customentry.PNG)
+![imgmaincfg](image/customentry.PNG)
 
 ### Lea obfuscation
 The `lea` obfuscation technique moves a different location into a register and decrypts it later to make it harder for reverse engineers to cross-reference certain data.  
@@ -71,9 +71,9 @@ popf
 ### Anti disassembly
 Inserts jump instructions to disrupt tools that decode instructions in a linear manner.  
 Before:
-![imgffbefore](ffbefore.PNG)  
+![imgffbefore](image/ffbefore.PNG)  
 After:
-![imgffafter](ffafter.PNG)
+![imgffafter](image/ffafter.PNG)
 
 ### KeyAuth Integration
 Blacksite now supports **KeyAuth** natively, allowing you to secure your application with key-based authentication.  
@@ -97,7 +97,7 @@ To add a watermark:
 
 ### Final result
 Here is a sample of the `main` function after all obfuscations (except anti disassembly) are applied:
-![imgfinal](final.PNG)
+![imgfinal](image/final.PNG)
 
 ---
 
