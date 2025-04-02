@@ -106,3 +106,5 @@ Here is a sample of the `main` function after all obfuscations (except anti disa
 ---
 
 We would like to give credit to Alcatraz a old obfuscator we forked to build this complete obfuscation suite
+
+Note: I might release source code im not sure how i want to proceed with this project yet
